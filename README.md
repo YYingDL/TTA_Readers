@@ -4,23 +4,18 @@ This is a repository for organizing papers related to domain adaptation.
 # 目录
 
 - [Test Time Adapataion]
-    - [1. 2020 SHOT-IM, SHOT](#1.1.1-Overview)
+    - [1. 2020 ICML: SHOT-IM, SHOT](#1.1.1-Overview)
 
-    - [2. 2021 Tent]
+    - [2. 2021 ICLR: Tent](#1.2.1-Overview)
 
-    - [3. 2020 SHOT-IM, SHOT](#3-simplified-self-attention-usage)
+    - [3. 2021 NeurIPS: T3A](#1.3.1-Overview)
 
-    - [4. Squeeze-and-Excitation Attention Usage](#4-squeeze-and-excitation-attention-usage)
+    - [4. 2022 CVPR: Cotta](#1.4.1-Overview)
 
-    - [5. SK Attention Usage](#5-sk-attention-usage)
+    - [5. 2022 ICML: EATA](#1.5.1-Overview)
 
-    - [6. CBAM Attention Usage](#6-cbam-attention-usage)
+    - [6. 2023 ICLR: SAR](#1.6.1-Overview)
 
-    - [7. BAM Attention Usage](#7-bam-attention-usage)
-    
-    - [8. ECA Attention Usage](#8-eca-attention-usage)
-
-    - [9. DANet Attention Usage](#9-danet-attention-usage)
 
 # 1 Test-time Adaptation
 -------------------------------------------------------------------------
@@ -38,7 +33,7 @@ This is a repository for organizing papers related to domain adaptation.
 ![](./tta/img/loss/shot.png)
 
 -------------------------------------------------------------------------
-## 1.2. 2021 ["Tent: Fully Test-time Adaptation by Entropy Minimization"] (https://arxiv.org/pdf/2006.10726) Code: https://github.com/DequanWang/tent
+## 1.2. 2021 ICLR ["Tent: Fully Test-time Adaptation by Entropy Minimization"] (https://arxiv.org/pdf/2006.10726) Code: https://github.com/DequanWang/tent
 ### 1.2.1 Overview 
 ![](./tta/img/tent.png)
 
@@ -46,7 +41,7 @@ This is a repository for organizing papers related to domain adaptation.
 Tent通过测试熵最小化进行调整。特别的，该方法仅使用每个批次数据进行在线更新正则化BatchNorm的参数。
 
 -------------------------------------------------------------------------
-## 1.3. ["Test-Time Classifier Adjustment Module for Model-Agnostic Domain Generalization"] (https://proceedings.neurips.cc/paper_files/paper/2021/file/1415fe9fea0fa1e45dddcff5682239a0-Paper.pdf) Code: https://github.com/matsuolab/T3A
+## 1.3. 2021 NeurIPS ["Test-Time Classifier Adjustment Module for Model-Agnostic Domain Generalization"] (https://proceedings.neurips.cc/paper_files/paper/2021/file/1415fe9fea0fa1e45dddcff5682239a0-Paper.pdf) Code: https://github.com/matsuolab/T3A
 
 ### 1.3.1 Overview 
 ![](./tta/img/t3a.png)
@@ -55,7 +50,7 @@ Tent通过测试熵最小化进行调整。特别的，该方法仅使用每个�
 T3A使用以下过程调整训练后的线性分类器（深度神经网络的最后一层）：（1）使用由源域中训练的基础分类器增强的在线未标记数据为每个类计算伪原型表示，（2）然后根据每个样本与伪原型的距离对其进行分类。T3A无需反向传播，仅修改线性层；因此，推理过程中计算成本的增加可以忽略不计，并避免了随机优化可能导致的灾难性故障。
 
 -------------------------------------------------------------------------
-## 1.4. 2022 ["Continual Test-Time Domain Adaptation"] (https://arxiv.org/pdf/2203.13591) Code: https://github.com/qinenergy/cotta
+## 1.4. 2022 CVPR ["Continual Test-Time Domain Adaptation"] (https://arxiv.org/pdf/2203.13591) Code: https://github.com/qinenergy/cotta
 
 ### 1.4.1 Overview 
 ![](./tta/img/cotta.png)
@@ -76,7 +71,7 @@ T3A使用以下过程调整训练后的线性分类器（深度神经网络的�
 
 
 -------------------------------------------------------------------------
-## 1.6. 2023 ["Towards Stable Test-Time Adaptation in Dynamic Wild World"] (https://arxiv.org/pdf/2302.12400) Code: https://github.com/mr-eggplant/SAR
+## 1.6. 2023 ICLR ["Towards Stable Test-Time Adaptation in Dynamic Wild World"] (https://arxiv.org/pdf/2302.12400) Code: https://github.com/mr-eggplant/SAR
 ### 1.6.1 Overview 
 ![](./tta/img/sar.png)
 
