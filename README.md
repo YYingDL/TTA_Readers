@@ -17,8 +17,7 @@ This is a repository for organizing papers related to domain adaptation.
 ![](./tta/img/loss/shot.png)
 
 -------------------------------------------------------------------------
-## 1.2. ["Tent: Fully Test-time Adaptation by Entropy Minimization"] (https://arxiv.org/pdf/2006.10726) Code: https://github.com/DequanWang/tent
-
+## 1.2. 2021 ["Tent: Fully Test-time Adaptation by Entropy Minimization"] (https://arxiv.org/pdf/2006.10726) Code: https://github.com/DequanWang/tent
 ### 1.2.1 Overview 
 ![](./tta/img/tent.png)
 
