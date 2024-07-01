@@ -4,11 +4,11 @@ This is a repository for organizing papers related to domain adaptation.
 # 目录
 
 - [Test Time Adapataion]
-    - [1. 2020 SHOT-IM, SHOT] 
+    - [1. 2020 SHOT-IM, SHOT](#1.1.1-Overview)
 
     - [2. 2021 Tent]
 
-    - [3. Simplified Self Attention Usage](#3-simplified-self-attention-usage)
+    - [3. 2020 SHOT-IM, SHOT](#3-simplified-self-attention-usage)
 
     - [4. Squeeze-and-Excitation Attention Usage](#4-squeeze-and-excitation-attention-usage)
 
