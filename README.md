@@ -15,6 +15,19 @@ This is a repository for organizing papers related to domain adaptation.
     - [5. 2022 ICML: EATA](#1.5.1-Overview)
 
     - [6. 2023 ICLR: SAR](#1.6.1-Overview)
+   
+    - [7. 2023 CVPR: TSD](#1.7.1-Overview)
+
+    - [8. 2023 CVPR: ROTTA](#1.8.1-Overview)
+
+    - [9. 2023 ICCV: DomainAdaptor](#1.9.1-Overview)
+
+    - [10. 2024 ICLR: DeYO](#1.10.1-Overview)
+
+    - [11. 2024 ICLR: ATTA](#1.11.1-Overview)
+
+    
+
 
 
 # 1 Test-time Adaptation
@@ -84,6 +97,43 @@ T3A使用以下过程调整训练后的线性分类器（深度神经网络的�
 ### 1.7.1 Overview 
 ![](./tta/img/tsd.png)
 
-### 1.6.2 Methods
+### 1.7.2 Methods
 将TTA作为特征修订问题来解决，因为源域和目标域之间存在域差距。之后，我们按照对齐和均匀性这两个测量来讨论测试时特征修订。对于测试时特征均匀性，我们提出了一种测试时自蒸馏策略来保证当前批次和所有先前批次的表示之间的均匀性一致性。对于测试时特征对齐，我们提出了一种记忆空间局部聚类策略来对齐即将到来的批次的邻域样本之间的表示。为了处理常见的噪声标签问题，我们提出了熵和一致性过滤器来选择和删除可能的噪声标签。
 ![](./tta/img/loss/tsd.png)
+
+-------------------------------------------------------------------------
+## 1.8. 2023 CVPR ["Robust Test-Time Adaptation in Dynamic Scenarios"] (https://openaccess.thecvf.com/content/CVPR2023/papers/Yuan_Robust_Test-Time_Adaptation_in_Dynamic_Scenarios_CVPR_2023_paper.pdf) Code: https://github.com/BIT-DA/RoTTA
+### 1.7.1 Overview 
+![](./tta/img/rotta.png)
+
+### 1.8.2 Methods
+提出了一个强大的批量标准化方案来估计标准化统计数据。利用内存库对类别平衡数据进行采样，同时考虑时效性和不确定性。此外，为了稳定训练过程，我们开发了一种具有师生模型的时间感知重新加权策略。大量实验证明，RoTTA 能够对相关采样的数据流进行持续的测试时间调整。
+![](./tta/img/loss/rotta.png)
+
+-------------------------------------------------------------------------
+## 1.9. 2023 ICCV ["DomainAdaptor: A Novel Approach to Test-time Adaptation"] (https://arxiv.org/pdf/2308.10297) Code: https://github.com/koncle/DomainAdaptor
+### 1.9.1 Overview 
+![](./tta/img/domainAdaptor.png)
+
+### 1.9.2 Methods
+AdaMixBN 通过在规范化层中通过动态混合系数和统计变换操作自适应地融合训练和测试统计来解决域偏移问题。为了进一步增强 AdaMixBN 的适应能力，设计了一个 GEMloss，它扩展了熵最小化损失，以更好地利用测试数据中的信息。
+![](./tta/img/loss/domainAdaptor.png)
+
+-------------------------------------------------------------------------
+## 1.10. 2024 ICLR ["Entropy is not Enough for Test-Time Adaptation: From the Perspective of Disentangled Factors"] (https://openreview.net/pdf?id=9w3iw8wDuE) Code: https://whitesnowdrop.github.io/DeYO/
+### 1.10.1 Overview 
+![](./tta/img/plpd.png)
+
+### 1.10.2 Methods
+观察到在有偏差的场景下，熵作为 TTA 置信度指标的不可靠性，并从理论上揭示了这源于忽视了数据的潜在解缠因子对预测的影响。基于这些发现，我们引入了一种名为“摧毁你的对象”（DeYO）的新型 TTA 方法，该方法利用了新提出的置信度指标“伪标签概率差异”（PLPD）。PLPD 通过测量应用对象破坏性变换前后预测之间的差异来量化对象形状对预测的影响。 DeYO 包括样本选择和样本加权，它们同时使用熵和 PLPD。为了实现稳健的适应性，DeYO 在进行预测时优先考虑主要包含形状信息的样本。
+![](./tta/img/loss/plpd.png)
+
+-------------------------------------------------------------------------
+## 1.12. 2024 ICLR ["Active Test-Time Adaptation: Theoretical Analyses and An Algorithm"] (https://openreview.net/pdf?id=YHUGlwTzFB) Code: https://github.com/divelab/ATTA
+### 1.11.1 Overview 
+![](./tta/img/atta.png)
+
+### 1.12.2 Methods
+提出了主动测试时自适应 (ATTA) 的新问题设置，将主动学习集成到完全 TTA 设置中。我们提供了学习理论分析，证明结合有限的标记测试实例可以在理论上保证跨测试域的整体性能。我们还提出了一种样本熵平衡方法，用于实现 ATTA，同时避免灾难性遗忘 (CF)。我们引入了一种简单而有效的 ATTA 算法，称为 SimATTA，使用实时样本选择技术。
+![](./tta/img/loss/atta.png)
+
